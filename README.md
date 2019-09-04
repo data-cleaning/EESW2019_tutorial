@@ -1,5 +1,5 @@
 # EESW2019_tutorial
-Materials for the short course at the [European Establishment Statistics Workshop 2019](https://ec.europa.eu/eurostat/cros/content/european-establishment-statistics-workshop-2019-eesw19_en)
+Materials for the short course at the [European Establishment Statistics Workshop 2019](https://statswiki.unece.org/display/ENBES/EESW19)
 
 
 ### Contents 
