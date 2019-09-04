@@ -1,0 +1,54 @@
+---
+title: "Monitoring Changes In Data"
+author: "Mark van der Loo and Edwin de Jonge"
+date: "ENBES|EESW 2019"
+output: 
+  beamer_presentation:
+    include:
+      in_header: ../00tex/presheader.tex
+classoption: "aspectratio=169"
+---
+
+## Try the code
+
+\centering\huge
+
+`03input/monitoring.R`
+
+## How to monitor changes
+
+### It depends $\ldots$
+
+- Cell-by-cell changes?
+- Count changes?
+- Count changes in satisfying rules?
+- Measure changes in aggregates?
+
+## Decomposing the number of changes in cells
+
+\centering
+\includegraphics[height=5cm]{fig/cellsplit.pdf}
+
+```{r, eval=FALSE}
+validate::cells(start=dataset1, step1=dataset2, step3=dataset3, ...)
+```
+
+
+## Decomposing the number of changes in validation results
+
+\centering
+\includegraphics[height=5cm]{fig/rulesplit.pdf}
+
+```{r, eval=FALSE}
+validate::compare(rules, start=dataset1, step1=dataset2, ...)
+```
+
+
+## Assignment
+
+1. Read all the versions of datasets created today
+2. Create plots showing the progress in the cell counts and rule counts methods.
+
+
+
+
