@@ -1,5 +1,8 @@
 # EESW2019_tutorial
-Materials for the short course at the [European Establishment Statistics Workshop 2019](https://statswiki.unece.org/display/ENBES/EESW19)
+
+Materials for the short course on Statistical Data Cleaning for Business
+Statistics at the 
+[European Establishment Statistics Workshop 2019](https://statswiki.unece.org/display/ENBES/EESW19)
 
 
 ### Contents 
@@ -26,7 +29,21 @@ Slot 2
 | Wrap-up              | 5      |
 
 
-### Install the following packages
+### Prerequisites
+
+Participants are expected to have a basic knowledge of R/RStudio, explicitly:
+
+- Work with the R command line and R scripts
+- Read/write CSV data
+- Some basic data manipulations and plots
+- I highly recommend working with RStudio projects.
+
+### Software needed for the course
+
+1. R See [https://r-project.org](https://r-project.org)
+2. (Recommended) [Rstudio](https://rstudio.com)
+
+Execute the following R code to install the necessary packages.
 
 ```r
 install.packages(c(
