@@ -4,23 +4,6 @@ Materials for the short course on Statistical Data Cleaning for Business
 Statistics at the 
 [European Establishment Statistics Workshop 2019](https://statswiki.unece.org/display/ENBES/EESW19)
 
-### Course form
-
-The course form is highly hands-on. Each topic starts with an apprximately 10 minute
-session where you run and adapt some R code. Next, I will provide background and
-details on what you just did. After that, depending on time there is a more in-depth
-assignment.
-
-### Prerequisites
-
-Course participants are expected to have some working knowledge of R. In particular:
-
-- Basic R syntax: vectors, data frames, `plot`, summary statistics.
-- Reading/writing (text) files
-- RStudio projects
-- Basic manipulations of data frames.
-
-
 
 ### Contents 
 
@@ -44,6 +27,15 @@ Slot 2
 | Adjusting            | 20        |
 | Monitoring           | 20        |
 | Wrap-up              | 5         |
+
+### Course form
+
+The course form is highly hands-on. Each topic starts with an apprximately 10 minute
+session where you run and adapt some R code. Next, I will provide background and
+details on what you just did. After that, depending on time there is a more in-depth
+assignment.
+
+
 
 
 ### Prerequisites
