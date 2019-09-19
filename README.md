@@ -40,6 +40,8 @@ assignment.
 
 ### Prerequisites
 
+**Bring a laptop**
+
 Participants are expected to have a basic knowledge of R/RStudio, explicitly:
 
 - Work with the R command line and R scripts
