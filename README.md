@@ -11,10 +11,10 @@ Slot 1
 
 |Topic                 | time (m)  |
 |----------------------|-----------|
-|Introduction          | 10        |
-|Reading dirty data    | 25        |
-|Approximate matching  | 25        |
-|Data validation       | 30        |
+|Introduction          | 20        |
+|Reading dirty data    | 30        |
+|Approximate matching  | 50        |
+|Data validation       | 50        |
 
 
 Slot 2 
@@ -23,10 +23,10 @@ Slot 2
 |Topic                 | time (m)  |
 |----------------------|-----------|
 | Error localization   | 20        |
-| Imputation           | 25        |
+| Imputation           | 50        |
 | Adjusting            | 20        |
-| Monitoring           | 20        |
-| Wrap-up              | 5         |
+| Monitoring           | 30        |
+| Wrap-up              | 10        |
 
 ### Course form
 
