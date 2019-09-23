@@ -104,6 +104,171 @@ Merge data from the `companies` dataset with data from `backbone.csv`.
 - Write to `02input/myinput.csv`
 
 
+## More on string distances
+
+### Main idea
+
+Define a sence of _distance_ between two text strings
+
+### Distance
+
+A function $d(s,t)$ that takes two arguments and
+
+- returns a nonnegative number,
+- returns zero if and only if $s=t$
+- is symmetric: $d(s,t)=d(t,s)$
+- is the length of a shortest path between $s$ and $t$: $d(s,t)\leq d(s,u)+d(u,t)$
+
+### Note
+
+Some string distances violate one or more of the above assumptions.
+
+
+## Distance types
+
+- Edit based
+- $q$-gram based
+- Heuristic
+
+
+## Edit-based string distances
+
+### Idea
+
+1. Choose basic steps to alter a string
+2. Find the smallest nr of steps that changes $s$ into $t$
+3. The distance equals the nr of steps needed.
+
+### Basic steps
+
+- deletion: hihi $\to$ hii
+- insertion: hihi $\to$ hihih
+- substitution: hihi $\to$ hiha
+- transposition: hihi $\to$ ihhi
+
+
+## Edit-based string distances
+
+\begin{center}
+
+  \begin{tabular}{p{2cm}cccc}
+      &\multicolumn{4}{c}{\textbf{Allowed operation}}\\
+      \textbf{Distance}  & substitution & deletion & insertion & transposition\\
+      Hamming            & \yep{}   & \nope{} & \nope{} &\nope{} \\
+      LCS                & \nope{}  & \yep{}  & \yep{}  &\nope{} \\
+      Levenshtein        & \yep{}   & \yep{}  & \yep{}  &\nope{} \\
+      OSA                & \yep{}   & \yep{}  & \yep{}  &\yep{}$^*$ \\
+      Damerau-Levenshtein& \yep{}   & \yep{}  & \yep{}  &\yep{}\\
+    \end{tabular}\\
+  $^*$Substrings may be edited only once.
+\end{center}
+
+## Example
+
+### Levenshtein distance
+
+$$
+leia\xrightarrow[+1]{\textrm{sub}}lela\xrightarrow[+1]{\textrm{ins}}leela
+$$
+
+### Longest common subsequence distance
+
+$$
+leia
+\xrightarrow[+1]{\textrm{del}}lea
+\xrightarrow[+1]{\textrm{ins}}leea
+\xrightarrow[+1]{\textrm{ins}}leela
+$$
+
+
+## $q$-gram based distances (I)
+
+### Algorithm
+
+ - Tabulate substrings of length $q$ ($=$ $q$-gram profile)
+ - Compute a distance between the profiles
+
+### Example
+
+2-gram profile of banana
+
+\begin{tabular}{ccc}
+ba&an&na\\
+1 & 1& 2 
+\end{tabular}
+
+## $q$-gram based distances (II)
+
+### $q$-gram distance
+
+Manhattan distance between $q$-gram profiles
+$$
+\sum_{\sf{qgram}} |n_{\textsf{qgram}}(s) -n_{\textsf{qgram}}(t)|
+$$
+
+### Cosine-distance
+
+1 minus the cosine of the angle between the profiles
+
+$$
+1 - \frac{\mathbf{n}(s)\cdot\mathbf{n}(t)}
+{\|\mathbf{n}(s)\|\|\mathbf{n}(t)\|}
+$$
+
+### Note
+
+ - Does not satisfy the 'identity' demand.
+ - Often one chooses $q=2$ of $q=3$ 
+
+
+## Jaro-Winkler distance
+
+### Jaro distance
+$$
+d_j(s,t)=1-\frac{1}{3}\left(\frac{m}{|s|} + \frac{m}{|t|} + \frac{m + T}{m}\right)
+$$
+
+- $m$ number of matching characters (within a window)
+- $T$ number of matches that need swapping
+- $|s|,|t|$ number of characters in $s$, $t$.
+
+### Jaro-Winkler distance
+$$
+d_{jw}(s,t) = [1-p\ell(s,t)]d_j(s,t)
+$$
+
+- $\ell(s,t)$ length of longest equal prefix (up to 4 characters)
+- $p$ a number between $0$ and $0.25$ (usually $0.1$)
+
+## Soundex
+
+### Algorithm
+
+- Strings are appointed a code: same code means 'sounds the same'
+- Equal codes: distance zero, otherwise 1
+
+### Example
+
+- Farnsworth $\to$ H652
+- Fnarswort $\to$  H562
+
+### Note
+
+- Based on English pronunciation
+- Many extensions exist (see the `phonics` R package)
+
+
+## Which one to use?
+
+### Considerations
+
+- Fixed versus variable structure/length
+- Why would strings differ? (typos, speech, deliberate changes)
+- Performance
+
+
+
+
 
 
 
