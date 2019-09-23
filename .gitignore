@@ -3,7 +3,7 @@
 .Rhistory
 .RData
 .Ruserdata
-*.pdf
+#*.pdf
 *.log
 *.aux
 *.tex
