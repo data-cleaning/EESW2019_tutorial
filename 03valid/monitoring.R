@@ -1,4 +1,6 @@
 # load the data
+# EESW2019
+
 companies <- read.csv("02input/input.csv",stringsAsFactors = FALSE)
 errors_located <- read.csv("03valid/errors_located.csv",stringsAsFactors=FALSE)
 imputed <- read.csv("03valid/imputed.csv",stringsAsFactors=FALSE)

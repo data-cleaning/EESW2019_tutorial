@@ -1,6 +1,6 @@
 # Statistical Data Cleaning
 # Mark van der Loo and Edwin de Jonge
-# useR!2019
+# EESW2019
 
 
 ## Approximate matching ----
