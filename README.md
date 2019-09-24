@@ -30,10 +30,11 @@ Slot 2
 
 ### Course form
 
-The course form is highly hands-on. Each topic starts with an apprximately 10 minute
-session where you run and adapt some R code. Next, I will provide background and
-details on what you just did. After that, depending on time there is a more in-depth
-assignment.
+The course form is highly hands-on. Each topic starts with an approximately
+10-15 minute session where you run and adapt some R code. Next, I will provide
+background and details on what you just did. After that there is a more
+in-depth assignment. Depending on time and topic we will discuss the topic more
+in-depth after that.
 
 
 
