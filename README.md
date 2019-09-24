@@ -1,10 +1,13 @@
 # EESW2019_tutorial
 
-<img align="right" src="src/00tex/sdcr.jpg" width=200>
+<a href="https://www.amazon.com/Statistical-Data-Cleaning-Applications-R/dp/1118897153"><img align="right" src="src/00tex/sdcr.jpg" width=200></a>
 
 Materials for the short course on Statistical Data Cleaning for Business
 Statistics at the 
 [European Establishment Statistics Workshop 2019](https://statswiki.unece.org/display/ENBES/EESW19)
+
+
+
 
 
 ### Contents 
