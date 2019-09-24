@@ -64,6 +64,10 @@ install.packages(c(
       , "simputation"
       , "rspa"
       , "daff"
+      , "jsonlite"
+      , "XML"
+      , "readr"
+      , "stringr"
       , "lumberjack")
   , dependencies=TRUE)
 ```
