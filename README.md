@@ -1,5 +1,7 @@
 # EESW2019_tutorial
 
+<img align="right" src="src/00tex/sdcr.jpg" width=200>
+
 Materials for the short course on Statistical Data Cleaning for Business
 Statistics at the 
 [European Establishment Statistics Workshop 2019](https://statswiki.unece.org/display/ENBES/EESW19)
