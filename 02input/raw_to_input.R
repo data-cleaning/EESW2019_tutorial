@@ -28,7 +28,6 @@ stringdist("hello", "Hello")
 # final assignment)
 
 # first read in the data
-# TODO this data should come from Edwin's part.
 companies <- read.csv("data/companies.csv",stringsAsFactors = FALSE) 
 backbone  <- read.csv("data/backbone.csv", stringsAsFactors = FALSE)
 
@@ -48,7 +47,7 @@ View(d)
 
 
 
-# at the end write your result to '02input/input.csv'
+# at the end write your result to '02input/my_input.csv'
 write.csv(input, "02input/my_input.csv", row.names=FALSE)
 
 
