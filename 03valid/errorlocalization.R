@@ -35,11 +35,11 @@ data_with_errors <- read.csv("02input/input.csv")
 # use locate_errors to find erronuous variables
 # and store the result in variable "errors"
 
-...
+
 
 # make a summary of the errors.
 
 # Which fields are found to contain errors?
 
-...
+
 
