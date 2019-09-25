@@ -7,13 +7,6 @@ Statistics at the
 [European Establishment Statistics Workshop 2019](https://statswiki.unece.org/display/ENBES/EESW19)
 
 
-```r
-companies <- read.csv("https://raw.githubusercontent.com/data-cleaning/EESW2019_tutorial/master/01raw/companies.csv"
-           , stringsAsFactors = FALSE) 
-backbone  <- read.csv("https://raw.githubusercontent.com/data-cleaning/EESW2019_tutorial/master/01raw/backbone.csv"
-           , stringsAsFactors = FALSE)
-
-```
 
 
 ----

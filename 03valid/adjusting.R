@@ -40,6 +40,24 @@ match_restrictions(ferry, ferry_rules, weight = weight)
 # 1f) And also
 match_restrictions(ferry, ferry_rules, adjust=matrix(c(TRUE,FALSE), nrow=1))
 
+## Assignment (on slide)
+
+errsloc <- read.csv("03valid/errors_located.csv",stringsAsFactors = FALSE)
+imputed <- read.csv("03valid/imputed.csv", stringsAsFactors = FALSE)
+
+rules <- validator(.file="03valid/rules.R")
+cf1 <- confront(imputed, rules)
+plot(cf1)
+adjust <- is.na(errsloc)
+m <- match_restrictions(imputed, rules, adjust=adjust)
+cf2 <- confront(m, rules, lin.eq.eps=0.01, lin.ineq.eps=0.01)
+plot(cf2)
+
+
+
+
+
+
 
 
 

@@ -16,12 +16,18 @@ stringdist("hihi", "haha")
 stringdist("hihi", "ihhi")
 stringdist("hello", "Hello")
 
+# the distance is measured by finding the smallest number of 
+# character substitutions, insertions, deletions, and transpositions
+# to turn one string into another.
+
 
 # 1.b compute the stringdistance between your name and your neighbours name.
 
+stringdist("your name","your neighbours name")
+
 # 1.c compute the stringdist between your own "firstname lastname" and
 #     "lastname, firstname".
-
+stringdist("firstname lastname", "lastname, firstname")
 
 # Assignment 2. Matching data on exact keys, using 'match'
 # (this can be done easier with 'merge' but we need this method for the 
@@ -45,14 +51,34 @@ View(d)
 
 ## Assignment 3: SEE SLIDE
 
+j <- amatch(companies$name, backbone$company
+            , maxDist=2)
+
+k <- amatch(companies$name, backbone$company
+            , maxDist=3)
+
+l <- amatch(companies$name, backbone$company
+            , method="cosine", q=2 , maxDist=0.2)
+
+m <- amatch(companies$name, backbone$company
+            , method="cosine", q=3, maxDist=0.2)
+
+n <- amatch(companies$name, backbone$company
+            , method="cosine", q=2, maxDist=0.5)
+
+d <- data.frame(dirty = companies$name
+                , matched = backbone$company[i]
+                , osa2    = backbone$company[j]
+                , osa3    = backbone$company[k]
+                , cos2.2  = backbone$company[l]
+                , cos3.2  = backbone$company[m]
+                , cos2.5  = backbone$company[n])
+
+View(d)
 
 
 # at the end write your result to '02input/my_input.csv'
 write.csv(input, "02input/my_input.csv", row.names=FALSE)
-
-
-
-
 
 
 

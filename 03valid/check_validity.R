@@ -40,11 +40,41 @@ rules
 # Study the variables staff ... vat. Add at least three more rules, then:
 ## 1. Summarize and plot the results. Interpret the results.
 
+rules <- rules + validator(
+  V7 = vat >= 0
+  , V8 = turnover - total.costs == profit
+  , V9 = staff.costs  <= total.costs
+)
+
+result <- confront(companies, rules, key="id")
+summary(result)
+plot(result)
+
+
 ## 2. Use `as.data.frame` to turn results into a data frame and
 ## View the results.
 
+d <- as.data.frame(result)
+View(result)
 
 ## Assignment (on slide, after presentation)
+
+## Assignemt 1
+rls <- validator(
+  profit <= 0.6*turnover
+  , turnover - total.costs == profit
+  , cor(total.costs, staff, use="pairwise.complete") >= 0.5
+  , grepl("^[1-9][0-9]{3}[A-Z]{2}", zipcode)
+)
+
+out <- confront(companies, rls)
+summary(out)
+
+## Assignment 2
+rules <- validator(.file="03valid/rules.R")
+out <- confront(companies, rules)
+summary(out)
+
 
 
 

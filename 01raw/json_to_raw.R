@@ -35,9 +35,11 @@ companies_raw$staff <- staff
 
 # 3 Turn profit into a numeric. 
 # Take a look at the 'parse_number' function from the readr package.
+library(readr)
+?parse_number
 
 # 4 Turn all financial variables into 'numeric'
-
+companies_raw[3:9] <- lapply(companies_raw[3:9], parse_number)
 
 # 5 save the resulting data.frame:
 write.csv(companies_raw, "01raw/my_companies.csv", row.names = FALSE, na ="")
@@ -46,6 +48,11 @@ write.csv(companies_raw, "01raw/my_companies.csv", row.names = FALSE, na ="")
 
 library(XML)
 library(stringr)
+backbone_xml <-  XML::xmlParse("01raw/backbone.xml")
+backbone <- XML::xmlToDataFrame(backbone_xml)
+
+backbone$zipcode <- str_remove_all(backbone$zipcode, " ")
+backbone$zipcode <- str_to_lower(backbone$zipcode)
 
 
 # and save the result

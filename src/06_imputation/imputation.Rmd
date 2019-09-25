@@ -128,7 +128,7 @@ companies %>%
 ## Assignment
 
 1. Read `errors_located.csv` (`stringsAsFactors=FALSE`)
-2. Make a separete data frame, selecting columns 11--14 (`staff`--`vat`)
+2. Make a separete data frame, selecting columns 7--14 (`staff`--`vat`)
 3. Implement the following imputation sequence:
     - Impute `turnover` by copying the `vat` variable (`impute_proxy`)
     - Impute `staff` with a robust linear model based on `staff.costs`

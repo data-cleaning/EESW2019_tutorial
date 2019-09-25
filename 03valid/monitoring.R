@@ -20,6 +20,7 @@ counts
 # 3. Try the same as above, but now add `compare="sequential"` to compare
 #    each dataset with the previous dataset. Interpret the results.
 
+counts <- cells(input=companies, errloc=errors_located, imputed=imputed, compare="sequential")
 
 # 4. Try the following
 plot(counts)
@@ -32,8 +33,8 @@ rcounts <- compare(rules, input=companies, errloc=errors_located, imputed=impute
 # Interpret this result. What do you see?
 
 # 6. create a plot and barplot of 'rcounts'
+plot(rcounts)
+barplot(rcounts)
 
 
-
-## Assignment (on slidess)
 

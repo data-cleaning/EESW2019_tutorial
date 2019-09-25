@@ -29,14 +29,41 @@ points(finvar$turnover, finvar$other.rev, col='black',pch=16)
 # 2. Now use a robust linear model (M-estimator) to impute
 #    'staff.costs' with 'staff' as predictor. Use 'impute_rlm'
 #    and make the same plot (but for staff and staff costs).
+imputed2 <- impute_rlm(finvar, staff.costs ~ staff)
+plot(imputed2$staff.costs, imputed$staff, col='blue', pch=16)
+# overlay with original data in black so imputed data stands out.
+points(finvar$staff.costs, finvar$staff, col='black',pch=16)
 
 
 # 3. The same imputation, but we now add a random residual.
 #    use impute_rlm, and add the option add_residual="normal"
 #    plot the results again.
 set.seed(2019)
-
+imputed2 <- impute_rlm(finvar, staff.costs ~ staff)
+plot(imputed2$staff.costs, imputed$staff, col='blue', pch=16)
+# overlay with original data in black so imputed data stands out.
+points(finvar$staff.costs, finvar$staff, col='black',pch=16)
 
 
 ## Assignment (on slide) ----
+
+dat <- read.csv("03valid/errors_located.csv"
+                ,stringsAsFactors=FALSE)
+
+dat <- dat[7:14]
+head(dat)
+
+library(magrittr)
+out <- dat %>%
+  impute_proxy(turnover ~ vat) %>%
+  impute_rlm(staff ~ staff.costs) %>%
+  impute_rlm(staff ~ total.costs) %>%
+  impute_proxy(profit ~  total.rev - total.costs) %>%
+  impute_mf(. ~ .)
+
+sum(is.na(out))
+
+
+
+
 
